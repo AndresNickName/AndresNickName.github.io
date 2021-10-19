@@ -141,3 +141,71 @@ footer{
 #barraSobreGoogle a:hover{
     text-decoration: revert;
 }
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+    body{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    header{
+        display: flex;
+        justify-content: flex-end;
+        top: 0;
+    }
+    
+    header a{
+        margin: 5px -3px;
+        width: 38px;
+        margin-right: 10px;
+        font-size: x-small;
+    }
+    
+    header img{
+        overflow: hidden;
+        width: 20px;
+        height: 20px;
+    }
+    
+    #logo{
+        width: auto;
+        height: 40px;
+    }
+    
+    #barraBusqueda{
+        width: auto;
+        height: auto;
+    }
+    
+    #botones{
+        width: auto;
+    }
+    
+    #botones button{
+        padding: 10px 12px;
+        font-size: x-small;
+    }
+    
+    footer{
+        bottom: 0;
+        position: fixed;
+        width: auto;
+        height: auto;
+    }
+        
+    #barraUbicacion p{
+        font-size: x-small;
+        margin: 2px;
+    }
+    
+    #barraSobreGoogle{
+        height: auto;
+    }
+    
+    #barraSobreGoogle a{
+        padding-right: 0px;
+        font-size: xx-small;
+    }
+    
+}
