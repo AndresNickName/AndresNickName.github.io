@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de tu edad</title>
+    <link rel="stylesheet" href="edad.css">
+</head>
+
+<body>
+    <h1>Edad</h1>
+    <div class="obtenerFecha">
+        <form class="fechaNaci">
+            <label id="tituloFecha">Fecha de nacimiento:</label>
+            <input type="date" id="fechaN" value="1993-08-12"/>
+        </form>
+        <div class="fechaHoy">
+            <label id="tituloFecha">Hoy:</label>
+            <label id="hoy"></label>
+        </div>
+        <form name="boton">
+            <input type="button" onclick="mostrar()" value="Obtener el Tiempo vivido">
+        </form>
+    </div>
+    <div class="resultado">
+        <div class="edad">
+            <h2>Edad</h2>
+            <div class="aniosEdad">
+                <p id="aniosEdad"></p>
+                <p>anios</p>
+            </div>
+        </div>
+        <div class="resumen">
+            <h2>Resumen</h2>
+            <div class="anios">
+                <p id="anios"></p>
+                <p>Anios</p>
+            </div>
+            <div class="meses">
+                <p id="meses"></p>
+                <p>Meses</p>
+            </div>
+            <div class="semanas">
+                <p id="semanas"></p>
+                <p>Semanas</p>
+            </div>
+            <div class="dias">
+                <p id="dias"></p>
+                <p>Dias</p>
+            </div>
+            <div class="horas">
+                <p id="horas"></p>
+                <p>Horas</p>
+            </div>
+            <div class="minutos">
+                <p id="minutos"></p>
+                <p>Minutos</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrar() {
+        // variables
+        var fechaN = document.getElementById("fechaN").value;
+        var fechaH = new Date();
+
+        // muestra fecha actual
+        var dd = fechaH.getDate();
+        var mm = fechaH.getMonth() + 1;
+        var yyyy = fechaH.getFullYear();
+        var fechahoy = dd + "/" + mm + "/" + yyyy;
+        document.getElementById("hoy").innerHTML = fechahoy;
+
+        //obtener valor de anio de nacimiento 
+        var fecha = fechaN.split("-");
+        var yy = fecha[0];
+ 
+        // obtener tiempo vivido o resumen (dd, mm, yy, semanas, seg)
+        let anios = Math.floor(yyyy - yy);
+        let meses = Math.floor(anios * 12);
+        let dias = Math.floor(anios * 365);
+        let semanas = Math.floor(dias / 7);
+        let horas = Math.floor(anios * 8760);
+        let min = Math.floor(anios * 525600);
+
+        //colocar o mostrar datos en html
+            document.getElementById("aniosEdad").innerHTML = anios; 
+            document.getElementById("anios").innerHTML = anios; 
+            document.getElementById("meses").innerHTML = meses; 
+            document.getElementById("semanas").innerHTML = semanas; 
+            document.getElementById("dias").innerHTML = dias;
+            document.getElementById("horas").innerHTML = horas; 
+            document.getElementById("minutos").innerHTML = min;
+        }
+
+
+    </script>
+</body>
+
+</html>
